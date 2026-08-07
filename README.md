@@ -1,120 +1,81 @@
-<div align="center">
+**Français** · [English](README.en.md)
 
-# 🔐 KDL Security Free
+# KDL Security Free
 
-**A guided security self-check for individuals and small businesses — checklist, indicative score and password-strength testing. One HTML file, no backend, nothing leaves the browser.**
+Un diagnostic de sécurité guidé, pour les particuliers et les petites
+entreprises. Une seule page HTML, aucun serveur, rien ne sort du navigateur.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-1F5278.svg)](LICENSE)
-[![No backend](https://img.shields.io/badge/Backend-none-22c55e.svg)](#privacy)
-[![Zero dependencies](https://img.shields.io/badge/Dependencies-zero-blue.svg)]()
-[![Defensive only](https://img.shields.io/badge/Scope-defensive-1F5278.svg)]()
+**[Ouvrir l'outil](https://security.kdl-tech.fr/free)** · ou téléchargez `index.html`
+et ouvrez-le d'un double-clic. Il fonctionne hors ligne.
 
-*🇫🇷 [Documentation française complète plus bas](#-documentation-française)*
-
-</div>
+![Interface de KDL Security Free : choix du profil entre particulier, petite entreprise et site web, puis liste de contrôle à cocher — antivirus, mises à jour, mots de passe uniques, double authentification, sauvegardes](docs/interface.png)
 
 ---
 
-## What it does
+## Le problème qu'il règle
 
-Most security advice aimed at non-technical people is either terrifying or
-useless. This is a single self-contained page that asks concrete questions
-(website, accounts, backups), gives an **indicative score out of 100**, and
-explains what to fix first.
+Les conseils de sécurité destinés au grand public sont soit terrifiants, soit
+inutilisables. On vous dit d'« activer la double authentification » sans jamais
+vous dire par quoi commencer, ni ce qui compte vraiment dans votre situation.
 
-> ⚠️ **Indicative and educational.** It does not replace a professional audit.
+Cette page pose des questions concrètes, adaptées à votre contexte, donne un
+**score indicatif sur 100**, et surtout **classe ce qu'il faut corriger en
+premier**.
 
-### Features
+> ⚠️ **Indicatif et pédagogique.** Ne remplace pas un audit professionnel.
 
-- ✅ **Nothing is sent anywhere** — everything runs in the browser
-- ✅ **Guided security checklist** (website, accounts, backups…) with a /100 score
-- ✅ **Password check** — entropy estimated locally, never transmitted
-- ✅ **Downloadable report**, generated client-side
-- ✅ **Zero trackers, zero cookies, zero backend**
+## Ce qu'il fait
 
-## Quick start
+| | |
+|---|---|
+| **Trois profils** | particulier, petite entreprise, site web — les questions s'adaptent |
+| **Liste de contrôle guidée** | antivirus, mises à jour, mots de passe, 2FA, sauvegardes, verrouillage |
+| **Score sur 100** | avec les priorités classées, pas une simple note |
+| **Test de mot de passe** | entropie calculée localement, jamais transmise |
+| **Rapport téléchargeable** | généré dans le navigateur |
 
-Open `index.html` in a browser, or serve the folder statically:
+## Pourquoi vous pouvez lui faire confiance
 
-```bash
-python3 -m http.server 8080
-```
+**Il n'y a aucun serveur où envoyer quoi que ce soit.** Pas de dépendance, pas de
+traceur, pas de cookie, pas de compte. Tout est en HTML, CSS et JavaScript dans
+un seul fichier — vous pouvez lire chaque ligne avant de lui confier quoi que ce
+soit.
 
-## Privacy
+Pour un outil de sécurité, c'est la moindre des choses : un logiciel qui vous
+demande d'évaluer vos mots de passe et qui appellerait un serveur au passage
+serait exactement ce contre quoi il prétend vous protéger.
 
-There is no server to send anything to. The whole tool is HTML/CSS/JS with no
-dependency — you can read every line before trusting it, which is rather the
-point for a security tool.
+Le test de mot de passe estime l'entropie **dans votre navigateur**. Rien n'est
+envoyé, rien n'est enregistré, rien ne subsiste après la fermeture de l'onglet.
 
-## Contributing
+## Ce qu'il ne fait pas
 
-Checklist items that reflect real-world small-business risk are the most useful
-contribution. ⭐ helps others find it.
+Il ne scanne pas votre machine, ne détecte aucun virus et ne vérifie pas si vos
+comptes ont fuité. Il vous fait un **état des lieux déclaratif** : ce qu'il vaut
+dépend de l'honnêteté de vos réponses.
 
----
-
-<a id="-documentation-française"></a>
-
-## 🇫🇷 Documentation française
-
-Diagnostic de sécurité **gratuit, défensif et 100 % local** par l'atelier
-[KDL TECH](https://kdl-tech.fr).
-
-Une page autonome (HTML/CSS/JS, sans dépendance ni serveur) qui aide
-particuliers et petites structures à faire un premier point sécurité :
-checklist guidée, score indicatif et vérification de robustesse de mot de passe.
-
-> ⚠️ Outil **indicatif** à visée pédagogique et défensive. Il ne remplace pas
-> un audit professionnel.
-
-## Caractéristiques
-
-- ✅ **Aucune donnée envoyée** : tout s'exécute dans le navigateur.
-- ✅ **Checklist de sécurité** (site web, comptes, sauvegardes…) avec score /100.
-- ✅ **Vérification de mot de passe** (entropie estimée localement, jamais transmise).
-- ✅ **Rapport téléchargeable** généré côté client.
-- ✅ **Zéro tracker, zéro cookie, zéro backend.**
+Il ne remplace pas un audit. Un score de 100/100 ne veut pas dire que vous êtes
+invulnérable — il veut dire que les bases sont en place.
 
 ## Utilisation
 
-Ouvrir `index.html` dans un navigateur, ou servir le dossier en statique :
+Ouvrez `index.html` dans un navigateur. Ou servez le dossier :
 
 ```bash
 python3 -m http.server 8080
-# puis http://localhost:8080
 ```
 
-La version en ligne est disponible sur
-**<https://security.kdl-tech.fr/free>**.
+## Contribuer
 
-## Version Pro
-
-Pour le suivi avancé (scans automatisés, modules d'analyse, alertes et
-rapports PDF), voir **[KDL Security](https://security.kdl-tech.fr)**.
-
-## Structure
-
-```
-index.html        # page complète (markup + styles + logique)
-assets/           # logo et favicon
-```
+Les ajouts les plus utiles sont des points de contrôle qui reflètent un risque
+réel pour une petite structure — pas des recommandations de laboratoire. Ouvrez
+une *issue* avec le risque concret que le point permet d'éviter.
 
 ## Licence
 
-[MIT](LICENSE) — © 2026 KDL TECH (Karim DeLucia).
+MIT. Reprenez-le, adaptez-le, intégrez-le à vos propres outils.
 
 ---
 
-<div align="center">
-
-**Other tools by [KDL TECH](https://kdl-tech.fr)** — an independent computer repair
-and software workshop in Guadeloupe 🇬🇵
-
-[Anti-arnaque](https://github.com/Kdl-Tech/kdl-anti-arnaque) ·
-[Privacy Dev Browser](https://github.com/Kdl-Tech/kdl-privacy-dev-browser) ·
-[Prompt Studio](https://github.com/Kdl-Tech/kdl-prompt-studio) ·
-[DNS Shield](https://github.com/Kdl-Tech/kdl-dns-shield) ·
-[Security Free](https://github.com/Kdl-Tech/kdl-security-free) ·
-[MAIA Conky](https://github.com/Kdl-Tech/maia-conky)
-
-</div>
+Par [**KDL TECH**](https://kdl-tech.fr) — maintenance informatique,
+développement, sécurité. Guadeloupe et à distance.
